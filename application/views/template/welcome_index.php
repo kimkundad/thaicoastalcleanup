@@ -58,17 +58,17 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <!-- Branding Image -->
+                <!-- Branding Image  visible-sm visible-xs-->
                 <a class="navbar-brand" href="<?php echo base_url('/'); ?>">
                     <img style="margin-top:-25px;" src="<?php echo base_url('assets/images/logo/logo-5.png'); ?>" height="55" title="logo">
-
+                    <a href="<?php echo base_url('/'); ?>" style="font-size: 16px;" class="site-title visible-sm visible-xs"> กรมทรัพยากรชายฝั่ง</a>
                   
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav hidden-sm hidden-xs">
                     <li><a href="<?php echo base_url('/'); ?>" class="site-title"> กรมทรัพยากรชายฝั่ง</a></li>
                     <li><a href="<?php echo base_url('/'); ?>" class="site-description">
                      ฐานข้อมูลขยะทะเล</a></li>

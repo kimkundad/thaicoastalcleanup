@@ -7,11 +7,7 @@
                 font-size: 1.3em;
                 margin-bottom: 8px;
             }
-            .sidebar-tabing img {
-                width: 260px;
-                max-width: 260px;
-                height: 190px;
-            }
+            
             .news-title a {
 
                 font-size: 18px;
@@ -29,43 +25,29 @@
             .cat-item{
                 padding: 8px;
             }
-            .bullet {
-                color: #fff;
-                font-size: 16px;
-                border-radius: 50%;
-                width: 28px;
-                height: 28px;
-                background: #dcdcdc;
-                text-align: center;
-                padding: 2px;
-                font-weight: 700;
-                display: block;
-                margin: 5px 8px 0px 0px;
-                line-height: 1.5;
-            }
-            .tab-pane i {
-                float: left;
-            }
-            .tab-pane li {
-                padding: 8px 2px;
-                overflow: hidden;
-                border-bottom: 1px dotted #b5b5b5;
-                line-height: 1;
-            }
+         
             .widget-area-rightbar .widget-title1 {
                 padding: 10px 18px 10px;
+            }
+            @media (min-width: 280px)
+             {
+                .sidebar-tabing img {
+                    width: 100%;
+                   
+                    height: auto;
+                }
             }
 
         </style>
 
         <div class="col-md-12">
             <h3 class="widget-title">ข่าวสาร ทช.</h3>
-                        <hr style="    margin-top: 10px; margin-bottom: 0px;">
+                      
         </div>
 
         <dir class="col-md-9" style="margin-top: 1px;">
 
-            <div class="sidebar-tabing" style="padding-left: 35px; padding-right: 20px;">
+            <div class="sidebar-tabing" style="padding-left: 15px; padding-right: 15px;">
 
                 <?php foreach($rs as $rowArticle) { ?>
 
@@ -110,30 +92,140 @@
             
         </dir>
 
-        <div class="col-md-3">
-            <div class="widget-area-rightbar">
-                <div class="widget_categories tab-pane">
-                    <h1 class="widget-title1">Most Viewed</h1>
 
-                    <ul style="list-style: none;">
-                        
-
-                <?php if(count($rs_view) != 0){ ?>
-                    <?php foreach($rs_view as $row) { ?>
-                        <li class="cat-item cat-item-1 current-cat">
-                               <a title="" style="line-height: 1;" href="<?php echo base_url('publicRelations/content/' . $row['id']); ?>">
-         <i class="fa fa-caret-right bullet"></i> <?php echo $row["Title_a"]  ?>
-                                                                 
-                               </a>
-                         </li>
-
-                         <?php } ?> 
-                <?php } ?>
+<style>
+          .widget {
 
 
-                    </ul>
+              -webkit-box-shadow: 0 0 5px 0 #e2e3e4;
+              -moz-box-shadow: 0 0 5px 0 #e2e3e4;
+              box-shadow: 0 0 5px 0 #e2e3e4;
+              position: relative;
+              margin-bottom: 30px;
+              padding: 15px 12px 12px;
+          }
+          .widget-title {
+              padding-bottom: 0px;
+                  color: #2f3c4e;
+          }
+          .widget-title {
+              font-size: 16px;
+              font-weight: bold;
+              padding-bottom: 10px;
+              border-bottom: 2px solid #ecedee;
+              margin-bottom: 20px;
+              line-height: 28px;
+              position: relative;
+          }
+          .tabs li {
+    float: left;
+    margin: 0 20px 10px 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  .widget li {
+    display: block;
+    list-style: none;
+    color: #4b525c;
+    border-bottom: 1px solid #ecedee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    width: 100%;
+  }
+  .tabs li a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    background-color: #f5f5f5;
+    padding: 0 10px;
+    font-size: 20px;
+  }
+  .widget-posts-img, .widget-comments-img {
+    float: left;
+    position: relative;
+    margin-right: 10px;
+    overflow: hidden;
+    text-align: center;
+    height: 60px;
+    width: 75px;
+  }
+  .widget-posts-content, .widget-comments-content {
+    overflow: hidden;
+    height: 100%;
+    font-size: 13px;
+  }
+  .widget .widget-posts-content>a {
+    line-height: 0.5em;
+    color: #2f3c4e;
+    text-decoration: none;
+  }
+  .widget .widget-posts-content>a:hover {
+    line-height: 0.5em;
+    color: #337ab7;
+    text-decoration: none;
+  }
+  .widget-posts-content span {
+    display: block;
+    margin-bottom: 1px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #9ba1a8;
+  }
+  @media (min-width: 992px)
+{
+    .sidebar-tabing img {
+                width: 260px;
+                max-width: 260px;
+                height: 190px;
+            }
+
+}
+
+          </style>
+
+        <div class="col-md-3" style="padding-right: 1px; padding-left: 1px;">
+           
+
+
+
+<div class="widget" style="background-color: #f5f5f5;">
+              <div class="widget-title">
+                <ul class="tabs" style="margin-bottom: 0px;     margin-top: -5px;">
+                  <li class="tab"><a href="#" class="current">Most Viewed</a></li>
+                  </ul>
                 </div>
+
+
+
+
+
+                <div class="widget-posts">
+                  <ul>
+<?php if(count($rs_view) != 0){ ?>
+                    <?php foreach($rs_view as $row) { ?>
+                    
+                                        <li class="">
+                    <div class="widget-posts-img">
+                    <a href="<?php echo base_url('publicRelations/content/' . $row['id']); ?>">
+
+                    <img src="<?php echo base_url('assets/admin/blog/'.$row['Thumbnail_Url']) ?>" class="img-responsive" style="height:65px; width:75px; overflow: hidden;">
+                    </a>
+                    </div>
+                    <div class="widget-posts-content">
+                    <a href="<?php echo base_url('publicRelations/content/' . $row['id']); ?>"><?php echo $row["Title_a"]  ?></a>
+                    <span><i class="fa fa-clock-o"></i> <?php echo date("d-m-Y", strtotime($row['Publish_Date'])); ?></span>
+                    </div>
+                    </li>
+
+
+                     <?php } ?> 
+                <?php } ?>
+                                                   
+                    </ul>
+                    </div>
             </div>
+            
 
            
             

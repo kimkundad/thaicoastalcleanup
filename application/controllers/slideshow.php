@@ -48,6 +48,7 @@ class slideshow extends MY_Controller {
                 'name' => $this->input->post('name'),
                 'title' => $this->input->post('first_text'),
                 'image' => strip_tags($image),
+                'url_web' => $this->input->post('url_web'),
                 'sub_title' => $this->input->post('secend_text')
         );
 
@@ -95,6 +96,7 @@ class slideshow extends MY_Controller {
                 'name' => $this->input->post('name'),
                 'title' => $this->input->post('first_text'),
                 'image' => strip_tags($image),
+                'url_web' => $this->input->post('url_web'),
                 'sub_title' => $this->input->post('secend_text')
         );
 
@@ -110,6 +112,7 @@ class slideshow extends MY_Controller {
         		$userData = array(
                 'name' => $this->input->post('name'),
                 'title' => $this->input->post('first_text'),
+                'url_web' => $this->input->post('url_web'),
                 'sub_title' => $this->input->post('secend_text')
         );
 

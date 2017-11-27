@@ -39,7 +39,7 @@ class PublicRelations extends MY_Controller {
        	$view =$rs->row_array();
        }
 
-       $sql_view="select * from article ORDER BY view DESC LIMIT 0,6";
+       $sql_view="select * from article where edate <= now() ORDER BY view DESC LIMIT 0,6";
         $rs_view=$this->db->query($sql_view);
        if($rs_view->num_rows() == 0){
        	 $data['rs_view'] = array();
@@ -92,7 +92,7 @@ class PublicRelations extends MY_Controller {
         $rs=$this->db->query($sql);
         $data['rs'] =$rs->result_array();
 
-        $sql_view="select * from article ORDER BY view DESC LIMIT 0,6";
+        $sql_view="select * from article where edate <= now() ORDER BY view DESC LIMIT 0,6";
         $rs_view=$this->db->query($sql_view);
        if($rs_view->num_rows() == 0){
        	 $data['rs_view'] = array();

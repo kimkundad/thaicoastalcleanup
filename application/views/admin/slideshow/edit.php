@@ -52,6 +52,14 @@
 												</div>
 
 
+												<div class="form-group">
+													<label class="col-md-3 control-label" for="profileFirstName">url ปลายทาง*</label>
+													<div class="col-md-8">
+														<input type="text" class="form-control" name="url_web" value="<?php echo $rs['url_web'] ?>" >
+														</div>
+												</div>
+
+
 
                      
 

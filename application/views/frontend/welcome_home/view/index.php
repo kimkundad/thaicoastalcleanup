@@ -87,7 +87,7 @@ active
             <h2><?=$row['title']?></h2>        
             <h4><?=$row['sub_title']?></h4>
         </hgroup>       
-        <button class="btn btn-hero btn" role="button">ดูรายละเอียด</button>
+        <a class="btn btn-hero btn" href="<?=$row['url_web']?>" role="button">ดูรายละเอียด</a>
       </div>
     </div>
 <?php
@@ -106,123 +106,14 @@ $s++;
             <h4>เพื่อสร้างแบรนด์ให้เป็นที่รู้จักในตลาดโลก</h4>
         </hgroup>
         <button class="btn btn-hero btn" role="button">ดูรายละเอียด</button>
-      </div>
+      </div> background
     </div> -->
 
 
   </div> 
 </div>
 
-
- <div class="content-section-a" style="padding: 20px 0 60px;">
-            <div class="container">
-				<div class="row">
-
-
-					<div class="col-md-4">
-						<h3 class="widget-title">ข่าวสาร <?php // echo $this->session->userdata('isUserLoggedIn'); ?></h3>
-						<hr>
-
-						<div class="sidebar-tabing" >
-
-							<?php if(count($rs) != 0){ ?>
-                    <?php foreach($rs as $row) { ?>
-
-				                    <div class="media"> 
-				                    	<a href="<?php echo base_url('/publicRelations/content/'.$row['id']); ?>"> 
-				                    		<img class="d-flex mr-3" src="<?php echo base_url('/assets/admin/blog/'.$row['Thumbnail_Url']); ?>"  style="float:left">
-				                    	</a>
-				                    <div class="media-body">
-				                        <div class="news-title">
-				                            <a href="<?php echo base_url('/publicRelations/content/'.$row['id']); ?>" class="media-news"><?php echo $row['Title_a']; ?></a>
-				                        </div>
-				                        <div class="news-auther"><span class="time"><i class="fa fa-clock-o"></i> <?php echo DateThai($row['Create_Date']); ?>, <i class="fa fa-folder-o"></i> ข่าวสาร</span></div>
-				                    </div>
-				                  </div>
-
-				             <?php } ?> 
-                    <?php } ?>     
-
-				       <!--     <div class="media"> 
-				                    	<a href="#"> <img class="d-flex mr-3" src="<?php echo base_url('assets/images/news/pic-201711201511165387332.png'); ?>"  style="float:left">
-				                    	</a>
-				                    <div class="media-body">
-				                        <div class="news-title">
-				                            <a href="#" class="media-news">ทช.ประชุมรับฟังคำชี้แจงหลักการจัดทำแผนปฏิรูปองค์กร</a>
-				                        </div>
-				                        <div class="news-auther"><span class="time"><i class="fa fa-clock-o"></i> 4 พ.ย. 2560, <i class="fa fa-folder-o"></i> ข่าวสาร</span></div>
-				                    </div>
-				                  </div>
-
-				            <div class="media"> 
-				                    	<a href="#"> <img class="d-flex mr-3" src="<?php echo base_url('assets/images/news/pic-201711131510561787379.JPG'); ?>"  style="float:left">
-				                    	</a>
-				                    <div class="media-body">
-				                        <div class="news-title">
-				                            <a href="#" class="media-news">รองฯ โสภณ หารือคณะทำงานการจัดประชุมขยะทะเลอาเซียน</a>
-				                        </div>
-				                        <div class="news-auther"><span class="time"><i class="fa fa-clock-o"></i> 4 พ.ย. 2560, <i class="fa fa-folder-o"></i> ข่าวสาร</span></div>
-				                    </div>
-				                  </div> -->
-
-
-				          </div>
-				          <hr>
-				          <div class="textwidget-more" style="float: right;"><a href="<?php echo base_url('PublicRelations/content_list'); ?>">ดูข่าวสารทั้งหมด <i class="fa fa-arrow-right"></i></a></div>
-
-    
-          			</div>
-
-
-          			<div class="col-md-4">
-						<h3 class="widget-title">บทความ</h3>
-						<hr>
-						<div class="sidebar-tabing" >
-
-				                  <?php if(count($rt) != 0){ ?>
-                    <?php foreach($rt as $rows) { ?>
-
-				                    <div class="media"> 
-				                    	<a href="<?php echo base_url('/publicRelations/content/'.$rows['id']); ?>"> <img class="d-flex mr-3" src="<?php echo base_url('/assets/admin/blog/'.$rows['Thumbnail_Url']); ?>"  style="float:left">
-				                    	</a>
-				                    <div class="media-body">
-				                        <div class="news-title">
-				                            <a href="<?php echo base_url('/publicRelations/content/'.$rows['id']); ?>" class="media-news"><?php echo $rows['Title_a']; ?></a>
-				                        </div>
-				                        <div class="news-auther"><span class="time"><i class="fa fa-clock-o"></i> <?php echo DateThai($rows['Create_Date']); ?>, <i class="fa fa-folder-o"></i> บทความ</span></div>
-				                    </div>
-				                  </div>
-
-				             <?php } ?> 
-                    <?php } ?>     
-
-
-				          </div>
-				          <hr>
-				          <div class="textwidget-more" style="float: right;"><a href="<?php echo base_url('PublicRelations/content_list'); ?>">ดูบทความทั้งหมด  <i class="fa fa-arrow-right"></i></a></div>
-
-    
-          			</div>
-
-          			<div class="col-md-4">
-						<h3 class="widget-title">รู้จักเรา</h3>
-						<hr>
-						<div style="margin-top: -15px;">
-							
-							<iframe src="https://player.vimeo.com/video/242977011" width="370" height="250" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-							<p style="margin-top: -10px; padding-left: 5px;"><strong style="color:#9e9e9e">"ทรัพยากรทางทะเลและชายฝั่ง"</strong> หมายความว่า สิ่งที่มีอยู่หรือเกิดขึ้นตามธรรมชาติในบริเวณทะเลและชายฝั่ง รวมถึงพรุชายฝั่ง พื้นที่ชุ่มน้ําชายฝั่ง คลอง คูแพรก ทะเลสาบ และบริเวณพื้นที่ปากแม่น้ํา ที่มีพื้นที่ติดต่อกับทะเลหรืออิทธิพลของน้ําทะเลเข้าถึง เช่น ป่าชายเลน ป่าชายหาด หาด ที่ชายทะเล เกาะ หญ้าทะเล ปะการัง ดอนหอย พืชและสัตว์ทะเล  </p>
-						</div>
-
-    
-          			</div>
-
-
-
-				</div>
-			</div>
-</div>
-
-    <div class="content-section-b" style="padding: 30px 0 60px;">
+    <div class="content-section-a" style="padding: 30px 0 60px;">
             <div class="container">
 			<div class="row" id="sec-news">
 				
@@ -314,26 +205,8 @@ $s++;
     </div>
 
 
-<section class="promo_full">
-			<div class="promo_full_wp magnific">
-				<div>
-					<h4 style="font-size: 28px;">กรมทรัพยากรทางทะเลและชายฝั่ง</h4>
-					<h4 style="font-size: 22px;">
-						ด้วยวิสัยทัศน์พันธกิจบูรณาการผสมผสานประชารัฐ
-					</h4>
 
-				</div>
-			</div>
-		</section>
-
-
-		    
-
-
-
-
-
-		    <div class="content-section-b" style="padding: 20px 0 20px;">
+<div class="content-section-b" style="padding: 20px 0 20px;">
             <div class="container" >
 
 
@@ -506,3 +379,165 @@ $s++;
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="promo_full">
+			<div class="promo_full_wp magnific">
+				<div>
+					<h4 style="font-size: 28px;">เป็นองค์กรหลักในการบริหารจัดการ</h4>
+					<h4 style="font-size: 22px;">
+						ทรัพยากรทางทะเลชายฝั่งให้มีความอุดมสมบูรณ์ฺและยั่งยืน
+					</h4>
+
+				</div>
+			</div>
+		</section>
+
+
+		    
+
+
+
+
+
+		    
+ <div class="content-section-a" style="padding: 20px 0 60px;">
+            <div class="container">
+				<div class="row">
+
+
+					<div class="col-md-4">
+						<h3 class="widget-title">ข่าวสาร <?php // echo $this->session->userdata('isUserLoggedIn'); ?></h3>
+						<hr>
+
+						<div class="sidebar-tabing" >
+
+							<?php if(count($rs) != 0){ ?>
+                    <?php foreach($rs as $row) { ?>
+
+				                    <div class="media"> 
+				                    	<a href="<?php echo base_url('/publicRelations/content/'.$row['id']); ?>"> 
+				                    		<img class="d-flex mr-3" src="<?php echo base_url('/assets/admin/blog/'.$row['Thumbnail_Url']); ?>"  style="float:left">
+				                    	</a>
+				                    <div class="media-body">
+				                        <div class="news-title">
+				                            <a href="<?php echo base_url('/publicRelations/content/'.$row['id']); ?>" class="media-news"><?php echo $row['Title_a']; ?></a>
+				                        </div>
+				                        <div class="news-auther"><span class="time"><i class="fa fa-clock-o"></i> <?php echo DateThai($row['Create_Date']); ?>, <i class="fa fa-folder-o"></i> ข่าวสาร</span></div>
+				                    </div>
+				                  </div>
+
+				             <?php } ?> 
+                    <?php } ?>     
+
+				       <!--     <div class="media"> 
+				                    	<a href="#"> <img class="d-flex mr-3" src="<?php echo base_url('assets/images/news/pic-201711201511165387332.png'); ?>"  style="float:left">
+				                    	</a>
+				                    <div class="media-body">
+				                        <div class="news-title">
+				                            <a href="#" class="media-news">ทช.ประชุมรับฟังคำชี้แจงหลักการจัดทำแผนปฏิรูปองค์กร</a>
+				                        </div>
+				                        <div class="news-auther"><span class="time"><i class="fa fa-clock-o"></i> 4 พ.ย. 2560, <i class="fa fa-folder-o"></i> ข่าวสาร</span></div>
+				                    </div>
+				                  </div>
+
+				            <div class="media"> 
+				                    	<a href="#"> <img class="d-flex mr-3" src="<?php echo base_url('assets/images/news/pic-201711131510561787379.JPG'); ?>"  style="float:left">
+				                    	</a>
+				                    <div class="media-body">
+				                        <div class="news-title">
+				                            <a href="#" class="media-news">รองฯ โสภณ หารือคณะทำงานการจัดประชุมขยะทะเลอาเซียน</a>
+				                        </div>
+				                        <div class="news-auther"><span class="time"><i class="fa fa-clock-o"></i> 4 พ.ย. 2560, <i class="fa fa-folder-o"></i> ข่าวสาร</span></div>
+				                    </div>
+				                  </div> -->
+
+
+				          </div>
+				          <hr>
+				          <div class="textwidget-more" style="float: right;"><a href="<?php echo base_url('PublicRelations/content_list'); ?>">ดูข่าวสารทั้งหมด <i class="fa fa-arrow-right"></i></a></div>
+
+    
+          			</div>
+
+
+          			<div class="col-md-4">
+						<h3 class="widget-title">บทความ</h3>
+						<hr>
+						<div class="sidebar-tabing" >
+
+				                  <?php if(count($rt) != 0){ ?>
+                    <?php foreach($rt as $rows) { ?>
+
+				                    <div class="media"> 
+				                    	<a href="<?php echo base_url('/publicRelations/content/'.$rows['id']); ?>"> <img class="d-flex mr-3" src="<?php echo base_url('/assets/admin/blog/'.$rows['Thumbnail_Url']); ?>"  style="float:left">
+				                    	</a>
+				                    <div class="media-body">
+				                        <div class="news-title">
+				                            <a href="<?php echo base_url('/publicRelations/content/'.$rows['id']); ?>" class="media-news"><?php echo $rows['Title_a']; ?></a>
+				                        </div>
+				                        <div class="news-auther"><span class="time"><i class="fa fa-clock-o"></i> <?php echo DateThai($rows['Create_Date']); ?>, <i class="fa fa-folder-o"></i> บทความ</span></div>
+				                    </div>
+				                  </div>
+
+				             <?php } ?> 
+                    <?php } ?>     
+
+
+				          </div>
+				          <hr>
+				          <div class="textwidget-more" style="float: right;"><a href="<?php echo base_url('PublicRelations/content_list'); ?>">ดูบทความทั้งหมด  <i class="fa fa-arrow-right"></i></a></div>
+
+    
+          			</div>
+
+          			<div class="col-md-4">
+						<h3 class="widget-title">รู้จักเรา</h3>
+						<hr>
+						<div style="margin-top: -15px;">
+							
+							<iframe src="https://player.vimeo.com/video/242977011" width="370" height="250" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+							<p style="margin-top: -10px; padding-left: 5px;"><strong style="color:#9e9e9e">"ทรัพยากรทางทะเลและชายฝั่ง"</strong> หมายความว่า สิ่งที่มีอยู่หรือเกิดขึ้นตามธรรมชาติในบริเวณทะเลและชายฝั่ง รวมถึงพรุชายฝั่ง พื้นที่ชุ่มน้ําชายฝั่ง คลอง คูแพรก ทะเลสาบ และบริเวณพื้นที่ปากแม่น้ํา ที่มีพื้นที่ติดต่อกับทะเลหรืออิทธิพลของน้ําทะเลเข้าถึง เช่น ป่าชายเลน ป่าชายหาด หาด ที่ชายทะเล เกาะ หญ้าทะเล ปะการัง ดอนหอย พืชและสัตว์ทะเล  </p>
+						</div>
+
+    
+          			</div>
+
+
+
+				</div>
+			</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
